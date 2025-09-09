@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="calculator">
+        <div class="display"></div>
+        <div class="buttons">
+            <button class="btn clear">C</button>
+            <button class="btn1">±</button>
+            <button class="btn2">%</button>
+            <button class="btn operator">÷</button>
+            <button class="btn">7</button>
+            <button class="btn">8</button>
+            <button class="btn">9</button>
+            <button class="btn operator">*</button>
+            <button class="btn">4</button>
+            <button class="btn">5</button>
+            <button class="btn">6</button>
+            <button class="btn operator">-</button>
+            <button  class="btn">1</button>
+            <button  class="btn">2</button>
+            <button class="btn">3</button>
+            <button class="btn operator">+</button>
+            <button class="btn">0</button>
+            <button class="btn">.</button>
+            <button class="btn">⌫</button>
+            <button class="btn equal">=</button>
+        </div>
+    </div>
+</body>
+<script>
+    let ShowData=document.querySelector('.display');
+    let Allbtn=document.querySelector(".buttons")
+
+    Allbtn.addEventListener("click",(e)=>{
+        if(e.target.tagName=="BUTTON")
+    {   
+        let value=e.target.textContent;
+        console.log(value);
+        
+        if(value==="C"){
+            ShowData.textContent="";
+        
+        }
+        else if(value==="⌫"){
+         ShowData.textContent=ShowData.textContent.slice(0,-1);
+        }
+
+        else if(value==="=")
+        {
+            try
+            {
+                ShowData.textContent=eval(ShowData.textContent);
+            }
+            catch{
+                 ShowData.textContent="Error"
+            }
+            
+
+            
+        }
+
+        else
+        {
+            ShowData.textContent+=value;
+        }
+
+
+    }
+ })
+
+ let btn1=document.querySelector(".buttons .btn1")
+ let btn2=document.querySelector(".buttons .btn2")
+
+ btn1.disabled = true;
+ btn2.disabled = true;
+    
+</script>
+</html>
