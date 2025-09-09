@@ -12,10 +12,10 @@ body {
         }
         .calculator {
             background: #222;
-            padding: 30px 20px;
+            padding: 30px 10px;
             border-radius: 20px;
             box-shadow: 0 8px 24px rgba(0,0,0,0.2);
-            width: 320px;
+            width:320px;
         }
         .display {
             background: #333;
@@ -67,4 +67,15 @@ body {
         }
         .btn.clear:hover {
             background: #ff6f61;
+        }
+
+        @media  only screen and (min-width:220px) and (max-width:575px){
+            .calculator {
+            background: #222;
+            padding: 30px 20px;
+            max-width: 400px;
+            margin: 20px 10px;
+            
+        }
+        
         }
